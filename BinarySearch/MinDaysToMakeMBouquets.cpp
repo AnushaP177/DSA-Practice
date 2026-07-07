@@ -1,7 +1,7 @@
 class Solution {
 public:
     int minDays(vector<int>& bd, int m, int k) {
-        long long val=m*1LL*k*1LL;
+        long long val=m*1LL*k*1LL;  //imp for large value of m and k where m*k exceeds int limit
         if (val > bd.size())    return -1;
         int low=bd[0], high=bd[0];
         for(int i=1; i<bd.size(); i++){
@@ -20,7 +20,7 @@ public:
                     cnt=0;
                 }
             }
-            bq+=cnt/k;
+            bq+=cnt/k;   //imp step
             if (bq>=m){
                 high=mid-1;
                 res=mid;
